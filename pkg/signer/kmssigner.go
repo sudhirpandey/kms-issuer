@@ -72,7 +72,7 @@ func (s *KMSSigner) Sign(_ io.Reader, digest []byte, _ crypto.SignerOpts) ([]byt
 		KeyId:            &s.keyID,
 		Message:          digest,
 		MessageType:      kmstypes.MessageTypeDigest,
-		SigningAlgorithm: kmstypes.SigningAlgorithmSpecRsassaPkcs1V15Sha256,
+		SigningAlgorithm: kmstypes.SigningAlgorithmSpecEcdsaSha512,
 	})
 	if err != nil {
 		return nil, err
